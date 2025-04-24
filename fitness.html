@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitRevolution - Votre centre de fitness premium</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #FF6B00;
+            --secondary-color: #00308F;
+            --dark-color: #1A1A1A;
+            --light-color: #F8F9FA;
+            --success-color: #28a745;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        /* Navbar styles */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color) !important;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            padding: 150px 0;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Services cards */
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* Trainers cards */
+        .trainer-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .trainer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .trainer-img {
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        /* Pricing cards */
+        .pricing-card {
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0 !important;
+        }
+        
+        .popular-plan {
+            border: 2px solid var(--primary-color);
+        }
+        
+        /* Appointment form */
+        .appointment-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Featured section */
+        .featured-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            border: none;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        
+        /* Newsletter */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 60px 0;
+            color: white;
+        }
+        
+        .newsletter-input {
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            width: 100%;
+            outline: none;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-link {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Dark mode toggle */
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .navbar,
+        .dark-mode .featured-section,
+        .dark-mode .trainer-card,
+        .dark-mode .pricing-card,
+        .dark-mode .testimonial-card,
+        .dark-mode .appointment-form {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .service-title,
+        .dark-mode .section-title,
+        .dark-mode .footer-title {
+            color: #ffffff;
+        }
+        
+        .dark-mode .nav-link,
+        .dark-mode .footer-link {
+            color: #b0b0b0 !important;
+        }
+        
+        .dark-mode .footer-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .dark-mode .trainer-card,
+        .dark-mode .pricing-card,
+        .dark-mode .testimonial-card {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark-mode .trainer-card:hover,
+        .dark-mode .pricing-card:hover,
+        .dark-mode .testimonial-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Toggle switch */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+        
+        /* Floating button */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Animations */
+        .animate-pop {
+            animation: pop 0.5s ease;
+        }
+        
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 107, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
+        }
+        
+        /* Stats counter */
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .service-img {
+                height: 150px;
+            }
+            
+            .trainer-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">FitRevolution</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#trainers">Coach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Abonnements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#appointment">RDV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="darkModeToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <a href="#appointment" class="btn btn-primary me-3">Prendre RDV</a>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Connexion</a></li>
+                            <li><a class="dropdown-item" href="#">Inscription</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Mon compte</a></li>
+                            <li><a class="dropdown-item" href="#">Mes RDV</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title animate__animated animate__fadeInDown">Transformez votre corps, transformez votre vie</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">Rejoignez notre communauté fitness et atteignez vos objectifs avec nos coachs experts</p>
+                    <div class="d-flex animate__animated animate__fadeIn animate__delay-2s">
+                        <a href="#appointment" class="btn btn-primary btn-lg me-3 pulse">Prendre RDV</a>
+                        <a href="#pricing" class="btn btn-outline-light btn-lg">Nos abonnements</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number" id="membersCounter">0</div>
+                        <h5>Membres</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number" id="trainersCounter">0</div>
+                        <h5>Coach Experts</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number" id="classesCounter">0</div>
+                        <h5>Cours Disponibles</h5>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number" id="yearsCounter">0</div>
+                        <h5>Ans d'Expérience</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5" id="services">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Nos Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-card animate__animated animate__fadeInUp">
+                        <!-- PLACEHOLDER FOR MUSCULATION IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top service-img" alt="Musculation">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Musculation</h5>
+                            <p class="card-text">Des équipements haut de gamme pour développer votre force et votre masse musculaire.</p>
+                            <a href="#appointment" class="btn btn-outline-primary">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card animate__animated animate__fadeInUp animate__delay-1s">
+                        <!-- PLACEHOLDER FOR CARDIO IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top service-img" alt="Cardio">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Cardio Training</h5>
+                            <p class="card-text">Brûlez des calories et améliorez votre endurance cardiovasculaire avec nos machines dernier cri.</p>
+                            <a href="#appointment" class="btn btn-outline-primary">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card animate__animated animate__fadeInUp animate__delay-2s">
+                        <!-- PLACEHOLDER FOR YOGA IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top service-img" alt="Yoga">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Yoga & Pilates</h5>
+                            <p class="card-text">Détendez votre esprit et renforcez votre corps avec nos cours de yoga et pilates.</p>
+                            <a href="#appointment" class="btn btn-outline-primary">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <!-- PLACEHOLDER FOR CROSSFIT IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" class="card-img-top service-img" alt="CrossFit">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">CrossFit</h5>
+                            <p class="card-text">Entraînement intensif pour développer force, endurance et agilité.</p>
+                            <a href="#appointment" class="btn btn-outline-primary">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <!-- PLACEHOLDER FOR NUTRITION IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" class="card-img-top service-img" alt="Nutrition">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Coaching Nutritionnel</h5>
+                            <p class="card-text">Des plans alimentaires personnalisés pour optimiser vos résultats.</p>
+                            <a href="#appointment" class="btn btn-outline-primary">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <!-- PLACEHOLDER FOR PERSONAL TRAINING IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top service-img" alt="Personal Training">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Entraînement Personnel</h5>
+                            <p class="card-text">Un coach dédié pour des résultats rapides et durables.</p>
+                            <a href="#appointment" class="btn btn-outline-primary">Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section class="py-5 bg-light" id="trainers">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Nos Coachs Experts</h2>
+            <div class="row">
+                <!-- Trainer 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="trainer-card">
+                        <!-- PLACEHOLDER FOR TRAINER 1 IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="card-img-top trainer-img" alt="Coach Jean">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Jean Dubois</h5>
+                            <p class="text-muted">Spécialiste en musculation</p>
+                            <p>15 ans d'expérience dans le coaching personnel et la préparation physique.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            <a href="#appointment" class="btn btn-primary mt-3">Réserver une séance</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trainer 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="trainer-card">
+                        <!-- PLACEHOLDER FOR TRAINER 2 IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1912&q=80" class="card-img-top trainer-img" alt="Coach Marie">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Marie Lambert</h5>
+                            <p class="text-muted">Expert en yoga et pilates</p>
+                            <p>Certifiée en yoga thérapeutique et professeure de pilates depuis 10 ans.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            <a href="#appointment" class="btn btn-primary mt-3">Réserver une séance</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trainer 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="trainer-card">
+                        <!-- PLACEHOLDER FOR TRAINER 3 IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="card-img-top trainer-img" alt="Coach Thomas">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Thomas Martin</h5>
+                            <p class="text-muted">Coach CrossFit</p>
+                            <p>Ancien compétiteur de CrossFit Games et coach certifié niveau 3.</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            <a href="#appointment" class="btn btn-primary mt-3">Réserver une séance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-5" id="pricing">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Nos Abonnements</h2>
+            <div class="row">
+                <!-- Basic Plan -->
+                <div class="col-lg-4 mb-4">
+                    <div class="pricing-card h-100">
+                        <div class="pricing-header">
+                            <h4 class="my-0 fw-normal">Basique</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mois</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><i class="fas fa-check text-success me-2"></i> Accès à la salle</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Cours collectifs</li>
+                                <li><i class="fas fa-times text-danger me-2"></i> Coaching personnel</li>
+                                <li><i class="fas fa-times text-danger me-2"></i> Programme nutritionnel</li>
+                                <li><i class="fas fa-times text-danger me-2"></i> Accès illimité</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="col-lg-4 mb-4">
+                    <div class="pricing-card h-100 popular-plan">
+                        <div class="pricing-header">
+                            <h4 class="my-0 fw-normal">Pro</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$59<small class="text-muted fw-light">/mois</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><i class="fas fa-check text-success me-2"></i> Accès à la salle</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Cours collectifs</li>
+                                <li><i class="fas fa-check text-success me-2"></i> 2 séances coaching/mois</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Programme nutritionnel</li>
+                                <li><i class="fas fa-times text-danger me-2"></i> Accès illimité</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-primary">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="col-lg-4 mb-4">
+                    <div class="pricing-card h-100">
+                        <div class="pricing-header">
+                            <h4 class="my-0 fw-normal">Premium</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$99<small class="text-muted fw-light">/mois</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li><i class="fas fa-check text-success me-2"></i> Accès à la salle</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Cours collectifs</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Coaching illimité</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Programme nutritionnel</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Accès 24/7</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="py-5 bg-light" id="appointment">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="appointment-form">
+                        <h2 class="text-center mb-4">Prendre un Rendez-vous</h2>
+                        <form id="bookingForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">Prénom</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Nom</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Téléphone</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Service</label>
+                                <select class="form-select" id="service" required>
+                                    <option value="" selected disabled>Choisir un service...</option>
+                                    <option value="musculation">Musculation</option>
+                                    <option value="cardio">Cardio Training</option>
+                                    <option value="yoga">Yoga & Pilates</option>
+                                    <option value="crossfit">CrossFit</option>
+                                    <option value="nutrition">Coaching Nutritionnel</option>
+                                    <option value="personal">Entraînement Personnel</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="trainer" class="form-label">Coach (optionnel)</label>
+                                <select class="form-select" id="trainer">
+                                    <option value="" selected>Pas de préférence</option>
+                                    <option value="jean">Jean Dubois</option>
+                                    <option value="marie">Marie Lambert</option>
+                                    <option value="thomas">Thomas Martin</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="date" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="time" class="form-label">Heure</label>
+                                    <input type="time" class="form-control" id="time" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message (optionnel)</label>
+                                <textarea class="form-control" id="message" rows="3"></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Réserver</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Témoignages</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <!-- PLACEHOLDER FOR CLIENT 1 IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="testimonial-img mx-auto d-block" alt="Client">
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-4">"Grâce à FitRevolution, j'ai perdu 15 kg en 3 mois. Les coachs sont exceptionnels et très à l'écoute."</p>
+                            <h5>Sophie Martin</h5>
+                            <p class="text-muted">Membre depuis 2 ans</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <!-- PLACEHOLDER FOR CLIENT 2 IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" class="testimonial-img mx-auto d-block" alt="Client">
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                            <p class="mb-4">"L'ambiance est incroyable et les équipements sont top. Je recommande vivement les cours de CrossFit avec Thomas!"</p>
+                            <h5>Pierre Dubois</h5>
+                            <p class="text-muted">Membre depuis 1 an</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <!-- PLACEHOLDER FOR CLIENT 3 IMAGE -->
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80" class="testimonial-img mx-auto d-block" alt="Client">
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="mb-4">"Le programme nutritionnel personnalisé a changé ma vie. J'ai enfin trouvé un équilibre alimentaire qui me convient."</p>
+                            <h5>Emma Laurent</h5>
+                            <p class="text-muted">Membre depuis 6 mois</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Abonnez-vous à notre newsletter</h2>
+                    <p class="mb-5">Recevez des conseils fitness, des offres exclusives et les dernières nouvelles directement dans votre boîte mail.</p>
+                    <form class="row g-3 justify-content-center">
+                        <div class="col-md-8">
+                            <input type="email" class="form-control newsletter-input" placeholder="Votre adresse email">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-light btn-lg w-100">S'abonner</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5 bg-light" id="contact">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Contactez-nous</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Votre nom" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Votre email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Sujet">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Informations de contact</h5>
+                            <div class="d-flex mb-4">
+                                <i class="fas fa-map-marker-alt me-3 mt-1"></i>
+                                <div>
+                                    <h6>Adresse</h6>
+                                    <p>Cotonou, Benin</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-4">
+                                <i class="fas fa-phone me-3 mt-1"></i>
+                                <div>
+                                    <h6>Téléphone</h6>
+                                    <p>+229 0155646232</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-4">
+                                <i class="fas fa-envelope me-3 mt-1"></i>
+                                <div>
+                                    <h6>Email</h6>
+                                    <a href="mailto:wadeulrich84@gmail.com" class="text-decoration-none">wadeulrich84@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <i class="fas fa-clock me-3 mt-1"></i>
+                                <div>
+                                    <h6>Heures d'ouverture</h6>
+                                    <p>Lundi - Vendredi: 6h - 22h<br>Samedi: 8h - 20h<br>Dimanche: 9h - 16h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-title">FitRevolution</h5>
+                    <p>Votre destination premium pour le fitness, la santé et le bien-être.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Liens rapides</h5>
+                    <a href="#home" class="footer-link">Accueil</a>
+                    <a href="#services" class="footer-link">Services</a>
+                    <a href="#trainers" class="footer-link">Coach</a>
+                    <a href="#pricing" class="footer-link">Abonnements</a>
+                    <a href="#appointment" class="footer-link">Prendre RDV</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Services</h5>
+                    <a href="#" class="footer-link">Musculation</a>
+                    <a href="#" class="footer-link">Cardio Training</a>
+                    <a href="#" class="footer-link">Yoga & Pilates</a>
+                    <a href="#" class="footer-link">CrossFit</a>
+                    <a href="#" class="footer-link">Coaching Nutritionnel</a>
+                    <a href="#" class="footer-link">Entraînement Personnel</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Newsletter</h5>
+                    <p>Abonnez-vous pour recevoir nos dernières offres et conseils.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Votre email">
+                            <button class="btn btn-primary" type="button">OK</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5 bg-light">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 FitRevolution. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Conçu avec <i class="fas fa-heart text-danger"></i> pour votre santé</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button -->
+    <div class="floating-btn animate-pop" id="floatingBtn">
+        <i class="fas fa-calendar-alt"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // Check for saved user preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        
+        darkModeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+        
+        // Stats counter animation
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // Animate stats when they come into view
+        const statsSection = document.querySelector('.bg-light');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue('membersCounter', 0, 1250, 2000);
+                    animateValue('trainersCounter', 0, 12, 1500);
+                    animateValue('classesCounter', 0, 35, 1800);
+                    animateValue('yearsCounter', 0, 8, 1200);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statsObserver.observe(statsSection);
+        
+        // Appointment form submission
+        const bookingForm = document.getElementById('bookingForm');
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            
+            // Create notification
+            const notification = document.createElement('div');
+            notification.className = 'position-fixed bottom-0 end-0 p-3';
+            notification.style.zIndex = '1100';
+            
+            const toast = document.createElement('div');
+            toast.className = 'toast show';
+            toast.setAttribute('role', 'alert');
+            toast.setAttribute('aria-live', 'assertive');
+            toast.setAttribute('aria-atomic', 'true');
+            
+            toast.innerHTML = `
+                <div class="toast-header bg-success text-white">
+                    <strong class="me-auto">Rendez-vous confirmé</strong>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Merci ${firstName}! Votre rendez-vous pour ${service} le ${date} à ${time} a été confirmé.
+                </div>
+            `;
+            
+            notification.appendChild(toast);
+            document.body.appendChild(notification);
+            
+            // Reset form
+            bookingForm.reset();
+            
+            // Auto-remove notification after 5 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 5000);
+            
+            // Close button functionality
+            toast.querySelector('.btn-close').addEventListener('click', () => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            });
+        });
+        
+        // Floating button functionality
+        const floatingBtn = document.getElementById('floatingBtn');
+        floatingBtn.addEventListener('click', function() {
+            window.location.href = '#appointment';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .trainer-card, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .trainer-card, .testimonial-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+        
+        // Run animation check on scroll and load
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+</body>
+</html>
